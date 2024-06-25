@@ -42,7 +42,7 @@ export default function charity() {
 
                                             <div>
                                                 <div className='mb-2'>
-                                                    <h2 className='text-xl font-semibold'>{item.name}</h2>
+                                                    <h2 className='text-xl font-semibold capitalize'>{item.name}</h2>
                                                 </div>
 
                                                 <Link href={`/charity-details/${item._id}`}>

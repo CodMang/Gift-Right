@@ -73,9 +73,9 @@ function wishlist() {
                     </div>
 
                     <div className='space-x-2'>
-                        {/* <Link href={`/admin-panel/wishlist/createAPI/${id}`}>
+                        <Link href={`/admin-panel/wishlist/createAPI/${id}`}>
                             <button type='button' className='rounded-md py-1 px-2 bg-green-400 hover:bg-green-500 text-black'>Add Through API</button>
-                        </Link> */}
+                        </Link>
 
                         <Link href={`/admin-panel/wishlist/create/${id}`}>
                             <button type='button' className='rounded-md py-1 px-2 bg-green-400 hover:bg-green-500 text-black'>Add</button>
@@ -91,12 +91,18 @@ function wishlist() {
                                     <tr className='border-b-2 border-gray-500' key={index}>
                                         <td className='py-5'>
                                             <div className='size-[50px] rounded-md bg-black'>
-                                                <img className='w-full h-full rounded-md' src={`/product/${item.imgName}`} alt="pic" />
+                                                {
+                                                    (item.importFlag == 1) ? (
+                                                        <img className='w-full h-full rounded-md' src={`${item.imgName}`} alt="pic" />
+                                                    ) : (
+                                                        <img className='w-full h-full rounded-md' src={`/product/${item.imgName}`} alt="pic" />
+                                                    )
+                                                }
                                             </div>
                                         </td>
                                         <td className='py-5'>
                                             <div>
-                                                <h2 className='text-2xl font-semibold'>{item.name}</h2>
+                                                <h2 className='text-2xl font-semibold capitalize'>{item.name}</h2>
                                             </div>
                                         </td>
                                         <td className='py-5'>

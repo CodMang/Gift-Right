@@ -72,7 +72,13 @@ const charityDetails = () => {
                                                 data?.productList.map((item, index) => (
                                                     <div className='p-3 rounded-md shadow-2xl space-x-3' key={index}>
                                                         <div className='w-full bg-black rounded-md h-[200px] overflow-hidden'>
-                                                            <img className='w-full rounded-md' src="/product/product1.png" alt="icon" />
+                                                            {
+                                                                (item.importFlag == 1) ? (
+                                                                    <img className='w-full rounded-md' src={`${item.imgName}`} alt="icon" />
+                                                                ) : (
+                                                                    <img className='w-full rounded-md' src={`/product/${item.imgName}`} alt="icon" />
+                                                                )
+                                                            }
                                                         </div>
 
                                                         <div className='flex justify-between mt-3'>

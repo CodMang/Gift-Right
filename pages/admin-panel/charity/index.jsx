@@ -93,7 +93,7 @@ function dashboard() {
                                         </td>
                                         <td className='py-5'>
                                             <div>
-                                                <h2 className='text-2xl font-semibold'>{item.name}</h2>
+                                                <h2 className='text-2xl font-semibold capitalize'>{item.name}</h2>
                                                 <p><b>Charity Id:</b> {item._id}</p>
                                             </div>
                                         </td>

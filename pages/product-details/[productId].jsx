@@ -33,14 +33,26 @@ const productDetails = () => {
                         <section className='p-7 h-full min-h-screen py-10 px-3'>
                             <div className='mb-5'>
                                 <div className='size-[250px] lg:hidden md:hidden block mx-auto rounded-md bg-black'>
-                                    <img className='w-full h-full rounded-md' src="/product/product1.png" alt="img" />
+                                    {
+                                        (data?.validItem.importFlag == 1) ? (
+                                            <img className='w-full h-full rounded-md' src={`${data?.validItem.imgName}`} alt="img" />
+                                        ) : (
+                                            <img className='w-full h-full rounded-md' src={`/product/${data?.validItem.imgName}`} alt="img" />
+                                        )
+                                    }
                                 </div>
                             </div>
 
                             <div className='flex justify-start space-x-3'>
                                 <div>
                                     <div className='lg:size-[500px] md:size-[300px] lg:block md:block hidden mx-auto rounded-md bg-black'>
-                                        <img className='w-full h-full rounded-md' src="/product/product1.png" alt="img" />
+                                        {
+                                            (data?.validItem.importFlag == 1) ? (
+                                                <img className='w-full h-full rounded-md' src={`${data?.validItem.imgName}`} alt="img" />
+                                            ) : (
+                                                <img className='w-full h-full rounded-md' src={`/product/${data?.validItem.imgName}`} alt="img" />
+                                            )
+                                        }
                                     </div>
                                 </div>
 
@@ -57,7 +69,7 @@ const productDetails = () => {
                                         </div>
 
                                         <div>
-                                            <Link href={`${data?.validItem.link}`}>
+                                            <Link target='blank' href={`${data?.validItem.link}`}>
                                                 <button type='button' className='text-sm font-semibold bg-yellow-400 hover:bg-yellow-500 rounded-md py-1 px-4'>Proceed To Gift</button>
                                             </Link>
                                         </div>
