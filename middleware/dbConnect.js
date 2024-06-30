@@ -1,4 +1,7 @@
 import mongoose from "mongoose";
+import dotenv from 'dotenv';
+
+dotenv.config({ path: '.env.production' });
 
 const connectDb = handler => async (req, res) => {
     try {
